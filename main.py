@@ -12,8 +12,8 @@ app = FastAPI(
 
 ll = LibreLyrics(
     config={
-        "download_path": "lyrics",
-        "create_folder": True,
+        "download_path": "./",
+        "create_folder": False,
         "synced_lyrics": True,
         "enhanced_lrc": False,
         "force_download": True,
