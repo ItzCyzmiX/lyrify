@@ -3,5 +3,10 @@ name = "fastapi-example"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
-    "fastapi>=0.135.3"
+    "fastapi>=0.135.3",
+	"librelyrics==1.0.0",
+	"spotapi==1.2.8",
+	"pymongo==4.17.0",
+	"redis==8.0.1",
+	"librelyrics-spotify==1.0.1"
 ]
