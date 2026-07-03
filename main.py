@@ -1,3 +1,5 @@
+from operator import truediv
+
 from fastapi import FastAPI
 from librelyrics import LibreLyrics
 from spotapi import Song
@@ -8,7 +10,15 @@ app = FastAPI(
     version="1.0.0",
 )
 
-ll = LibreLyrics()
+ll = LibreLyrics(
+    config={
+        "download_path": "lyrics",
+        "create_folder": True,
+        "synced_lyrics": True,
+        "enhanced_lrc": False,
+        "force_download": True,
+    }
+)
 song = Song()
 
 
