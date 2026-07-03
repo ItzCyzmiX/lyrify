@@ -9,7 +9,6 @@ app = FastAPI(
 )
 
 ll = LibreLyrics()
-
 song = Song()
 
 
@@ -18,8 +17,8 @@ def read_root():
     return "server working"
 
 
-@app.get("/api/song/")
-async def get_song(q: str):
+@app.get("/api/song")
+def get_song(q: str):
     results = {}
     if q:
         songs = song.query_songs(q, limit=1)
@@ -41,8 +40,8 @@ async def get_song(q: str):
     return results
 
 
-@app.get("/api/lyrics/")
-async def get_lyrics(id: str):
+@app.get("/api/lyrics")
+def get_lyrics(id: str):
     results = {"lyrics": ""}
     if id:
         response = ll.fetch("https://open.spotify.com/track/" + id)
